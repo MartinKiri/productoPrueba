@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-boddy text-center">
+          <span class="titulo">{{ titulo | uppercase}}</span>
+          <form class="mt-4" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+            <div class="mb-3 ">
+              <input type="text" class="form-control form-control-lg" placeholder="Producto" formControlName="producto">
+              <div class="text-danger"  *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched"  >
+                <span> El nombre del producto es <strong>obligatorio</strong> </span>
+              </div>
+            </div>
+            <div class="mb-3 ">
+              <input type="text" class="form-control form-control-lg" placeholder="Categoria"
+                formControlName="categoria">
+                <div class="text-danger"  *ngIf="productoForm.get('categoria')?.hasError('required') && productoForm.get('categoria')?.touched"  >
+                  <span> La categoria del producto es <strong>obligatorio</strong> </span>
+                </div>
+            </div>
+            <div class="mb-3 ">
+              <input type="text" class="form-control form-control-lg" placeholder="Ubicación"
+                formControlName="ubicacion">
+                <div class="text-danger"  *ngIf="productoForm.get('ubicacion')?.hasError('required') && productoForm.get('ubicacion')?.touched"  >
+                  <span> La Ubicación del producto es <strong>obligatorio</strong> </span>
+                </div>
+            </div>
+            <div class="mb-3 ">
+              <input type="number" class="form-control form-control-lg" placeholder="Precio" formControlName="precio">
+              <div class="text-danger"  *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched"  >
+                <span> El precio del producto es <strong>obligatorio</strong> </span>
+              </div>
+            </div>
+            <div class="mb-3 d-flex justify-content-evenly">
+              <button routerLink="/" class="btn btn-lg btn-secondary ">Volver</button>
+              <button class="btn btn-lg btn-success" type="submit" [disabled]="productoForm.invalid">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
