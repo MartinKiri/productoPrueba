@@ -1,0 +1,10 @@
+body {
+  background: #74ebd5;
+  background: -webkit-linear-gradient(to right, #acb6e5, #74ebd5);
+  background: linear-gradient(to right, #acb6e5, #74ebd5);
+}
+
+.titulo {
+  font-size: 1.5rem;
+  font-family: "Press Start 2P", cursive;
+}
