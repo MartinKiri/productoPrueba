@@ -7,7 +7,7 @@ import { Producto } from '../models/producto';
   providedIn: 'root',
 })
 export class ProductoService {
-  url = 'http://localhost:4000/api/productos/';
+  url = 'https://data.mongodb-api.com/app/data-sjgfp/endpoint/data/v1';
 
   constructor(private http: HttpClient) {}
 
